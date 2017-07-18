@@ -1,5 +1,7 @@
 ; Use Emacs-like keys in Windows programs
 
+#IfWinNotActive ahk_class vcxsrv/x X rl
+
 *~CapsLock Up::SetCapsLockState, Off
 
 !f::Send, ^{Right}
