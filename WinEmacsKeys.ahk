@@ -11,6 +11,13 @@
 
 !k::Send, ^{Delete}
 
+<^>!f::Send, ^{Right}
+<^>!b::Send, ^{Left}
+<^>!+f::Send, +^{Right}
+<^>!+b::Send, +^{Left}
+
+<^>!k::Send, ^{Delete}
+
 !Backspace::Send, ^{Backspace}
 
 *Enter::Send, {Enter}
