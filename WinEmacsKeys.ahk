@@ -1,4 +1,4 @@
-; Use Emacs-like keys in Windows programs
+;; Use Emacs-like keys in Windows programs
 
 #IfWinNotActive ahk_class vcxsrv/x X rl
 
@@ -56,3 +56,11 @@ CapsLock & k::
 	Send, +{End}
 	Send, {Delete}
 	Return
+
+;; Personal keys (non-default)
+
+!p::Send, {WheelUp}
+!n::Send, {WheelDown}
+
+<^>!p::Send, {WheelUp}
+<^>!n::Send, {WheelDown}
