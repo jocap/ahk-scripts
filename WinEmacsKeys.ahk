@@ -10,7 +10,11 @@
 !+b::Send, +^{Left}
 
 !v::Send, {PgUp}
-!k::Send, ^{Delete}
+
+!k::
+	Send, ^+{Right}
+	Send, {Delete}
+	Return
 
 <^>!f::Send, ^{Right}
 <^>!b::Send, ^{Left}
@@ -19,7 +23,10 @@
 <^>!+b::Send, +^{Left}
 
 <^>!v::Send, {PgUp}
-<^>!k::Send, ^{Delete}
+<^>!k::
+	Send, ^+{Right}
+	Send, {Delete}
+	Return
 
 !Backspace::Send, ^{Backspace}
 
