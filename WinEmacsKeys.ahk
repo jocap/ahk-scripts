@@ -14,6 +14,7 @@
 
 <^>!f::Send, ^{Right}
 <^>!b::Send, ^{Left}
+
 <^>!+f::Send, +^{Right}
 <^>!+b::Send, +^{Left}
 
@@ -22,7 +23,14 @@
 
 !Backspace::Send, ^{Backspace}
 
+; Make sure Enter works normally
+; (when it isn't used as a modifier):
+
 *Enter::Send, {Enter}
+*+Enter::Send, +{Enter}
+*^Enter::Send, ^{Enter}
+*!Enter::Send, !{Enter}
+
 Enter & a::Send, {Home}
 Enter & e::Send, {End}
 Enter & f::Send, {Right}
