@@ -1,34 +1,50 @@
+;; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with <open> and enter text in its buffer.
+
 ;; Use Emacs-like keys in Windows programs
 
 #IfWinNotActive ahk_class vcxsrv/x X rl
 
-*~CapsLock Up::SetCapsLockState, Off
+CapsLock::Return
 
-!f::Send, ^{Right}
-!b::Send, ^{Left}
-!+f::Send, +^{Right}
-!+b::Send, +^{Left}
+!f::
+<^>!f::
+Send, ^{Right}
+Return
 
-!v::Send, {PgUp}
+!b::
+<^>!b::
+Send, ^{Left}
+Return
+
+!+f::
+<^>!+f::
+Send, +^{Right}
+Return
+
+!+b::
+<^>!+b::
+Send, +^{Left}
+Return
+
+
+!v::
+<^>!v::
+Send, {PgUp}
+Return
+
 
 !k::
-	Send, ^+{Right}
-	Send, {Delete}
-	Return
-
-<^>!f::Send, ^{Right}
-<^>!b::Send, ^{Left}
-
-<^>!+f::Send, +^{Right}
-<^>!+b::Send, +^{Left}
-
-<^>!v::Send, {PgUp}
 <^>!k::
-	Send, ^+{Right}
-	Send, {Delete}
-	Return
+Send, ^+{Right}
+Send, {Delete}
+Return
 
-!Backspace::Send, ^{Backspace}
+!Backspace::
+<^>!Backspace::
+Send, ^+{Left}
+Send, {Delete}
+Return
 
 ; Make sure Enter works normally
 ; (when it isn't used as a modifier):
@@ -38,29 +54,63 @@
 *^Enter::Send, ^{Enter}
 *!Enter::Send, !{Enter}
 
-Enter & a::Send, {Home}
-Enter & e::Send, {End}
-Enter & f::Send, {Right}
-Enter & b::Send, {Left}
-Enter & v::Send, {PgDn}
+Enter & a::
+CapsLock & a::
+Send, {Home}
+Return
 
-CapsLock & a::Send, {Home}
-CapsLock & e::Send, {End}
-CapsLock & f::Send, {Right}
-CapsLock & b::Send, {Left}
-CapsLock & p::Send, {Up}
-CapsLock & n::Send, {Down}
-CapsLock & v::Send, {PgDn}
+Enter & e::
+CapsLock & e::
+Send, {End}
+Return
 
+Enter & f::
+CapsLock & f::
+Send, {Right}
+Return
+
+Enter & b::
+CapsLock & b::
+Send, {Left}
+Return
+
+
+Enter & v::
+CapsLock & v::
+Send, {PgDn}
+Return
+
+Enter & m::
+CapsLock & m::
+Send, {Enter}
+Return
+
+
+Enter & p::
+CapsLock & p::
+Send, {Up}
+Return
+
+Enter & n::
+CapsLock & n::
+Send, {Down}
+Return
+
+
+Enter & k::
 CapsLock & k::
-	Send, +{End}
-	Send, {Delete}
-	Return
+Send, +{End}
+Send, {Delete}
+Return
 
 ;; Personal keys (non-default)
 
-!p::Send, {WheelUp}
-!n::Send, {WheelDown}
+!p::
+<^>!p::
+Send, {WheelUp}
+Return
 
-<^>!p::Send, {WheelUp}
-<^>!n::Send, {WheelDown}
+!n::
+<^>!n::
+Send, {WheelDown}
+Return
